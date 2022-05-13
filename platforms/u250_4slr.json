@@ -1,0 +1,12 @@
+{
+  "name" : "U250",
+  "part" : "xcu250-figd2104-2L-e",
+  "resources" : {
+    "DSP"  : 11508,
+    "BRAM" : 4000,
+    "FF"   : 2760000,
+    "LUT"  : 1380000
+  },
+  "bandwidth" : 616.0,
+  "reconf_time" : 180000
+}

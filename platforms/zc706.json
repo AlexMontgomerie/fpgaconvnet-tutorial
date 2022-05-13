@@ -1,0 +1,12 @@
+{
+  "name" : "ZC706",
+  "part" : "xc7z045ffg900-2",
+  "resources" : {
+    "DSP"  : 900,
+    "BRAM" : 1090,
+    "FF"   : 437200,
+    "LUT"  : 218600
+  },
+  "bandwidth" : 68.224,
+  "reconf_time" : 82550
+}
