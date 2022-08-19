@@ -1,6 +1,8 @@
 {
   "name" : "ZC706",
+  "freq" : 150,
   "part" : "xc7z045ffg900-2",
+  "ports" : 4,
   "resources" : {
     "DSP"  : 900,
     "BRAM" : 1090,
