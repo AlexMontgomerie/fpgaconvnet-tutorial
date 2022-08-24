@@ -46,7 +46,13 @@ following script:
 
 For more information, visit [here](https://www.xilinx.com/support/answers/59128.html).
 
-Finally, there is a known
+#### Bug Workarounds
+
+The [Y2K22 patch](https://support.xilinx.com/s/article/76960?language=en_US) is
+required to fix issues with exporting designs in HLS. Please follow the
+instructions [here](https://support.xilinx.com/s/article/76960?language=en_US).
+
+Also, there is a known
 [bug](http://svn.clifford.at/handicraft/2017/vivadobugs/vivadobug04.txt) to do
 with C++ libraries. A workaround for this is adding the `mpfr.h` and `gmp.h`
 headers manually. For this project, you need to create a header file
@@ -71,8 +77,7 @@ All the tutorials are done with jupyter notebook. Firstly, `ipykernel` and
 `jupyter` need to be installed.
 
 ```
-conda install -c anaconda ipykernel
-conda install -c anaconda jupyter
+conda install -c anaconda ipykernel jupyter
 ```
 
 To run the notebooks locally, firstly you will need to add the python
@@ -82,8 +87,8 @@ environment to `ipykernel`.
 python -m ipykernel install --user --name=fpgaconvnet
 ```
 
-To run the notebooks locally, firstly you will need to add the python
-environment to `ipykernel`.
+Now you can start the notebook. Follow the instructions in the command line to
+view it in your browser.
 
 ```
 jupyter notebook --no-browser --port=8888
