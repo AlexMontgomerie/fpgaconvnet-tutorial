@@ -18,7 +18,8 @@ conda create -n fpgaconvnet python=3.8
 SAMO and fpgaConvNet packages are also required.
 
 ```
-python -m pip install samo fpgaconvnet-model fpgaconvnet-hls
+git submodule update --init --recursive
+python -m pip install samo/ fpgaconvnet-model/ fpgaconvnet-hls/
 ```
 
 ### Vivado
