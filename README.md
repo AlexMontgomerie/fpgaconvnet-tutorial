@@ -1,98 +1,28 @@
-# fpgaConvNet Tutorial
+# [fpgaConvNet](https://icidsl.github.io/fpgaconvnet-website/)
 
-A collection of tutorials for the fpgaConvNet framework. It is recommeneded to
-start with the [end-to-end-example](end-to-end-example.ipynb).
+fpgaConvNet is an automated toolflow for designing Convolutional Neural Network (CNN) accelerators on FPGAs with state-of-the-art performance and efficiency. 
 
-## Setup
-
-### Python Tools
-
-It is recommended to use
-[conda](https://docs.conda.io/en/latest/miniconda.html#installing) to manage
-your python environment. Also, a python version above 3.8 is required.
-
-```
-conda create -n fpgaconvnet python=3.8
-```
-
-SAMO and fpgaConvNet packages are also required.
-
-```
-git submodule update --init --recursive
-python -m pip install samo/ fpgaconvnet-model/ fpgaconvnet-hls/
-```
-
-### Vivado
-
-The [fpgaconvnet-hls](https://github.com/AlexMontgomerie/fpgaconvnet-hls)
-project relies on Vivado 2019.1. To install, first [download](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2019-1.html)
-from the Xilinx website.
-
-Once installed, you will need to add a license server to your .bashrc file. You
-will also need to add Vivado to your path. To do so, add the following to your
-`.basrc`:
-
-```
-export PATH=/tools/Xilinx/Vivado/2019.1/bin:$PATH
-export PATH=/tools/Xilinx/SDK/2019.1/bin:$PATH
-```
+The toolflow can be used to accelerate a number of applications, including: Classification, Object Detection, Segmentation, Human Action Recognition, Key Word Spotting, Anomaly Detection, and etc.
 
 
-You will need to setup JTAG drivers to program a device. To do so, execute the
-following script:
+## Project Structure
 
-```
-/tools/Xilinx/Vivado/2019.1/data/xicom/cable_drivers/lin64/install_script/install_drivers/install_drivers
-```
+The fpgaConvNet codebase is split into 4 invididual repositories: 
 
-For more information, visit [here](https://www.xilinx.com/support/answers/59128.html).
+[fpgaconvnet-torch](https://github.com/Yu-Zhewen/fpgaconvnet-torch), a collection of pre-trained CNN models, providing emulated accuracy results for features such as quantization and sparsity. This repository is optional, if users can provide their own onnx model instead.
 
-#### Bug Workarounds
+[fpgaconvnet-model](https://github.com/AlexMontgomerie/fpgaconvnet-model), providing hardware performance and resource modeling, and converting the onnx model to a json-format acclerator configuration.
 
-The [Y2K22 patch](https://support.xilinx.com/s/article/76960?language=en_US) is
-required to fix issues with exporting designs in HLS. Please follow the
-instructions [here](https://support.xilinx.com/s/article/76960?language=en_US).
+[fpgaconvnet-optimiser](https://github.com/AlexMontgomerie/fpgaconvnet-optimiser), performing Design Space Exploration based on the model predictions to identify the optimal acclerator configuration.
 
-Also, there is a known
-[bug](http://svn.clifford.at/handicraft/2017/vivadobugs/vivadobug04.txt) to do
-with C++ libraries. A workaround for this is adding the `mpfr.h` and `gmp.h`
-headers manually. For this project, you need to create a header file
-`fpgaconvnet/hls/hardware/system.hpp` which includes the following:
+[fpgaconvnet-hls](https://github.com/AlexMontgomerie/fpgaconvnet-hls), containing hls code templates,  translating the identified accelerator configuration into actual source files which can synthesized by Xilinx tools.
 
-```C
-#ifndef SYSTEM_HPP_
-#define SYSTEM_HPP_
-
-#include "(path to Vivado 2019.1)/include/gmp.h"
-#include "(path to Vivado 2019.1)/include/mpfr.h"
-
-#endif
-```
-
-> this isn't always necessary, so you can just create a blank header file if
-your system doesn't encounter this bug
-
-## Jupyter Setup
-
-All the tutorials are done with jupyter notebook. Firstly, `ipykernel` and
-`jupyter` need to be installed.
-
-```
-conda install -c anaconda ipykernel jupyter
-```
-
-To run the notebooks locally, firstly you will need to add the python
-environment to `ipykernel`.
-
-```
-python -m ipykernel install --user --name=fpgaconvnet
-```
-
-Now you can start the notebook. Follow the instructions in the command line to
-view it in your browser.
-
-```
-jupyter notebook --no-browser --port=8888
-```
+The relationship between these repositories are shown as the figrue below.
+<img src="toolflow.png">
 
 
+## Get Started
+
+To set up the environment, please follow the steps [here](tutorial/0_get_started/README.md).
+
+You are also welcome to try our end-to-end development example [here](tutorial/1_simple_end_to_end).

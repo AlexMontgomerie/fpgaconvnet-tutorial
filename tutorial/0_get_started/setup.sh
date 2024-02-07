@@ -1,4 +1,7 @@
 #!/bin/bash
+CONDA_BASE=$(conda info --base)
+source ${CONDA_BASE}/etc/profile.d/conda.sh
+conda activate fpgaconvnet-tutorial
 
 # checkout fpgaconvnet repo
 TUTORIAL_ROOT_PATH=$(git rev-parse --show-toplevel)
@@ -6,8 +9,6 @@ TUTORIAL_ROOT_PATH=$(git rev-parse --show-toplevel)
 git clone https://github.com/Yu-Zhewen/fpgaconvnet-torch ${TUTORIAL_ROOT_PATH}/fpgaconvnet-torch
 cd ${TUTORIAL_ROOT_PATH}/fpgaconvnet-torch
 make torch-cpu
-export FPGACONVNET_TORCH=${WORK_DIR}
-export PYTHONPATH=$PYTHONPATH:$FPGACONVNET_TORCH
 cd ..
 
 

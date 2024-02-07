@@ -1,8 +1,5 @@
 # Get started: Install and Run fpgaConvNet
 
-
-## Installation Steps
-
 In this section, we demonstrate how to set up the environment for fpgaConvNet.
 
 As a prerequisite, install the following software on your machine:
@@ -23,7 +20,7 @@ Afterwards, create a new conda environment named as `fpgaconvnet-tutorial` and r
 ```
 conda create -n fpgaconvnet-tutorial python=3.10
 conda activate fpgaconvnet-tutorial
-bash setup.sh
+./setup.sh
 ```
 
 To check the installation is successful, run the following commands in your bash shell, and make sure there is no error showing.
@@ -31,4 +28,10 @@ To check the installation is successful, run the following commands in your bash
 ```
 python -c "import torch"
 python -c "import fpgaconvnet"
+```
+
+The rest of the tutorial is built on jupyter notebook, and simply run `notebook_shell.sh`to continue.
+
+```
+./notebook_shell.sh
 ```
