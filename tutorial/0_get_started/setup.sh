@@ -26,5 +26,5 @@ cd ..
 
 git clone https://github.com/AlexMontgomerie/fpgaconvnet-hls ${TUTORIAL_ROOT_PATH}/fpgaconvnet-hls
 
-# install jupyter notebook
-pip install ipykernel jupyter
+# install jupyter notebook and netron
+pip install ipykernel jupyter netron
