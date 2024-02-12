@@ -1,0 +1,1388 @@
+{
+  "name": "from_onnx",
+  "date_created": "2024-02-12 16:38:26.013161",
+  "platform": {
+    "part": "xczu7ev-ffvb1156-2-e",
+    "board": "",
+    "resources": {
+      "DSP": 1728,
+      "BRAM": 624,
+      "FF": 460800,
+      "LUT": 230400,
+      "URAM": 96
+    },
+    "board_freq": 200,
+    "mem_bw": 153.6,
+    "reconf_time": 0.08255,
+    "port_width": 512
+  },
+  "total_operations (OPs)": 119125470.0,
+  "total_operations (MACs)": 59562735.0,
+  "network": {
+    "multi_fpga": false,
+    "performance": {
+      "latency (s)": 1.50997847,
+      "throughput (FPS)": 0.6622610983320841,
+      "performance (OP/s)": 78892164.60152574,
+      "performance (MAC/s)": 39446082.30076287,
+      "cycles": 70855694,
+      "delays between partitions (s)": 0.08255
+    },
+    "num_partitions": 14,
+    "avg_resource_usage": {
+      "LUT": 49193.07142857143,
+      "FF": 22436.0,
+      "BRAM": 97.14285714285714,
+      "DSP": 70.78571428571429,
+      "URAM": 0.0
+    },
+    "avg_resource_usage_percentage": {
+      "LUT": 21.351159474206348,
+      "FF": 4.868923611111111,
+      "BRAM": 15.567765567765568,
+      "DSP": 4.096395502645503,
+      "URAM": 0.0
+    },
+    "sum_resource_usage": {
+      "LUT": 688703,
+      "FF": 314104,
+      "BRAM": 1360,
+      "DSP": 991,
+      "URAM": 0
+    }
+  },
+  "partitions": {
+    "0": {
+      "partition_index": 0,
+      "batch_size": 1,
+      "num_layers": 5,
+      "latency": 0.069061645,
+      "cycles": 13812329,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 32,
+      "weights_reloading_layer": "Conv_2",
+      "resource_usage": {
+        "LUT": 5779,
+        "FF": 4173,
+        "BRAM": 16,
+        "DSP": 12,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 2.5082465277777777,
+        "FF": 0.9055989583333334,
+        "BRAM": 2.564102564102564,
+        "DSP": 0.6944444444444444,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 0.025,
+        "out (Gbps)": 0.004166666666666666,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Conv_0": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 196608,
+          "cycle": 196608,
+          "resource_usage": {
+            "LUT": 1105,
+            "FF": 1268,
+            "BRAM": 6,
+            "DSP": 9,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.4796006944444445,
+            "FF": 0.2751736111111111,
+            "BRAM": 0.9615384615384616,
+            "DSP": 0.5208333333333333,
+            "URAM": 0.0
+          }
+        },
+        "Relu_1": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 65536,
+          "cycle": 65536,
+          "resource_usage": {
+            "LUT": 16,
+            "FF": 35,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.006944444444444444,
+            "FF": 0.007595486111111111,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_2": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 393216,
+          "cycle": 393216,
+          "resource_usage": {
+            "LUT": 4286,
+            "FF": 2435,
+            "BRAM": 10,
+            "DSP": 3,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 1.8602430555555556,
+            "FF": 0.5284288194444444,
+            "BRAM": 1.6025641025641024,
+            "DSP": 0.1736111111111111,
+            "URAM": 0.0
+          }
+        },
+        "Relu_3": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 2048,
+          "cycle": 2048,
+          "resource_usage": {
+            "LUT": 16,
+            "FF": 35,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.006944444444444444,
+            "FF": 0.007595486111111111,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "MaxPool_4": {
+          "type": "LAYER_TYPE.Pooling",
+          "interval": 2048,
+          "cycle": 2048,
+          "resource_usage": {
+            "LUT": 356,
+            "FF": 400,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.1545138888888889,
+            "FF": 0.08680555555555555,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        }
+      }
+    },
+    "1": {
+      "partition_index": 1,
+      "batch_size": 1,
+      "num_layers": 5,
+      "latency": 0.00282332,
+      "cycles": 564664,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 4,
+      "weights_reloading_layer": "Conv_7",
+      "resource_usage": {
+        "LUT": 167064,
+        "FF": 93315,
+        "BRAM": 221,
+        "DSP": 320,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 72.51041666666667,
+        "FF": 20.250651041666668,
+        "BRAM": 35.41666666666667,
+        "DSP": 18.51851851851852,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 0.5333333333333332,
+        "out (Gbps)": 0.2666666666666666,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Conv_5": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 98304,
+          "cycle": 98304,
+          "resource_usage": {
+            "LUT": 29056,
+            "FF": 23316,
+            "BRAM": 105,
+            "DSP": 192,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 12.611111111111112,
+            "FF": 5.059895833333333,
+            "BRAM": 16.826923076923077,
+            "DSP": 11.11111111111111,
+            "URAM": 0.0
+          }
+        },
+        "Conv_5_squeeze_Relu_6": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 8192,
+          "cycle": 8192,
+          "resource_usage": {
+            "LUT": 6112,
+            "FF": 1607,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 2.6527777777777777,
+            "FF": 0.3487413194444444,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_6": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 8192,
+          "cycle": 8192,
+          "resource_usage": {
+            "LUT": 64,
+            "FF": 140,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.027777777777777776,
+            "FF": 0.030381944444444444,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_6_squeeze_Conv_7": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 8192,
+          "cycle": 8192,
+          "resource_usage": {
+            "LUT": 12844,
+            "FF": 5669,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 5.574652777777778,
+            "FF": 1.230251736111111,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_7": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 73728,
+          "cycle": 73728,
+          "resource_usage": {
+            "LUT": 118988,
+            "FF": 62583,
+            "BRAM": 116,
+            "DSP": 128,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 51.64409722222222,
+            "FF": 13.581380208333332,
+            "BRAM": 18.58974358974359,
+            "DSP": 7.4074074074074066,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "2": {
+      "partition_index": 2,
+      "batch_size": 1,
+      "num_layers": 6,
+      "latency": 0.02568832,
+      "cycles": 5137664,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 64,
+      "weights_reloading_layer": "Conv_10",
+      "resource_usage": {
+        "LUT": 8295,
+        "FF": 6837,
+        "BRAM": 14,
+        "DSP": 6,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 3.6002604166666665,
+        "FF": 1.4837239583333333,
+        "BRAM": 2.2435897435897436,
+        "DSP": 0.3472222222222222,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 2.133333333333333,
+        "out (Gbps)": 0.016666666666666663,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_8": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 8192,
+          "cycle": 8192,
+          "resource_usage": {
+            "LUT": 64,
+            "FF": 140,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.027777777777777776,
+            "FF": 0.030381944444444444,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "MaxPool_9": {
+          "type": "LAYER_TYPE.Pooling",
+          "interval": 8192,
+          "cycle": 8192,
+          "resource_usage": {
+            "LUT": 1299,
+            "FF": 1486,
+            "BRAM": 2,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.5638020833333334,
+            "FF": 0.3224826388888889,
+            "BRAM": 0.3205128205128205,
+            "DSP": 0.0
+          }
+        },
+        "MaxPool_9_squeeze_Conv_10": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 8192,
+          "cycle": 8192,
+          "resource_usage": {
+            "LUT": 1527,
+            "FF": 1215,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.6627604166666667,
+            "FF": 0.263671875,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_10": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 49152,
+          "cycle": 49152,
+          "resource_usage": {
+            "LUT": 4599,
+            "FF": 2783,
+            "BRAM": 12,
+            "DSP": 6,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 1.9960937500000002,
+            "FF": 0.6039496527777778,
+            "BRAM": 1.9230769230769231,
+            "DSP": 0.3472222222222222,
+            "URAM": 0.0
+          }
+        },
+        "Conv_10_squeeze_Relu_11": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 256,
+          "cycle": 256,
+          "resource_usage": {
+            "LUT": 790,
+            "FF": 1178,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.3428819444444444,
+            "FF": 0.2556423611111111,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_11": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 256,
+          "cycle": 256,
+          "resource_usage": {
+            "LUT": 16,
+            "FF": 35,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.006944444444444444,
+            "FF": 0.007595486111111111,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        }
+      }
+    },
+    "3": {
+      "partition_index": 3,
+      "batch_size": 1,
+      "num_layers": 1,
+      "latency": 0.01114528,
+      "cycles": 2229056,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 2,
+      "weights_reloading_layer": "Conv_12",
+      "resource_usage": {
+        "LUT": 2594,
+        "FF": 3210,
+        "BRAM": 268,
+        "DSP": 36,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 1.1258680555555556,
+        "FF": 0.6966145833333334,
+        "BRAM": 42.94871794871795,
+        "DSP": 2.083333333333333,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 0.1,
+        "out (Gbps)": 0.05,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Conv_12": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 524288,
+          "cycle": 524288,
+          "resource_usage": {
+            "LUT": 2594,
+            "FF": 3210,
+            "BRAM": 268,
+            "DSP": 36,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 1.1258680555555556,
+            "FF": 0.6966145833333334,
+            "BRAM": 42.94871794871795,
+            "DSP": 2.083333333333333,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "4": {
+      "partition_index": 4,
+      "batch_size": 1,
+      "num_layers": 2,
+      "latency": 0.0480056,
+      "cycles": 9601120,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 256,
+      "weights_reloading_layer": "Conv_14",
+      "resource_usage": {
+        "LUT": 1026,
+        "FF": 1411,
+        "BRAM": 12,
+        "DSP": 9,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 0.44531249999999994,
+        "FF": 0.3062065972222222,
+        "BRAM": 1.9230769230769231,
+        "DSP": 0.5208333333333333,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 2.048,
+        "out (Gbps)": 0.008,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_13": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 16384,
+          "cycle": 16384,
+          "resource_usage": {
+            "LUT": 16,
+            "FF": 35,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.006944444444444444,
+            "FF": 0.007595486111111111,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_14": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 25600,
+          "cycle": 25600,
+          "resource_usage": {
+            "LUT": 1010,
+            "FF": 1376,
+            "BRAM": 12,
+            "DSP": 9,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.4383680555555556,
+            "FF": 0.2986111111111111,
+            "BRAM": 1.9230769230769231,
+            "DSP": 0.5208333333333333,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "5": {
+      "partition_index": 5,
+      "batch_size": 1,
+      "num_layers": 5,
+      "latency": 0.00831872,
+      "cycles": 1663744,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 8,
+      "weights_reloading_layer": "Conv_17",
+      "resource_usage": {
+        "LUT": 19444,
+        "FF": 14757,
+        "BRAM": 150,
+        "DSP": 72,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 8.43923611111111,
+        "FF": 3.2024739583333335,
+        "BRAM": 24.03846153846154,
+        "DSP": 4.166666666666666,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 1.6,
+        "out (Gbps)": 0.1,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_15": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 4096,
+          "cycle": 4096,
+          "resource_usage": {
+            "LUT": 64,
+            "FF": 140,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.027777777777777776,
+            "FF": 0.030381944444444444,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_15_squeeze_MaxPool_16": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 4096,
+          "cycle": 4096,
+          "resource_usage": {
+            "LUT": 3917,
+            "FF": 2231,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 1.7000868055555556,
+            "FF": 0.48415798611111105,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "MaxPool_16": {
+          "type": "LAYER_TYPE.Pooling",
+          "interval": 1024,
+          "cycle": 1024,
+          "resource_usage": {
+            "LUT": 5084,
+            "FF": 5480,
+            "BRAM": 8,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 2.2065972222222223,
+            "FF": 1.1892361111111112,
+            "BRAM": 1.282051282051282,
+            "DSP": 0.0
+          }
+        },
+        "MaxPool_16_squeeze_Conv_17": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 4096,
+          "cycle": 4096,
+          "resource_usage": {
+            "LUT": 5954,
+            "FF": 1417,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 2.584201388888889,
+            "FF": 0.3075086805555556,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_17": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 32768,
+          "cycle": 32768,
+          "resource_usage": {
+            "LUT": 4425,
+            "FF": 5489,
+            "BRAM": 142,
+            "DSP": 72,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 1.9205729166666667,
+            "FF": 1.1911892361111112,
+            "BRAM": 22.756410256410255,
+            "DSP": 4.166666666666666,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "6": {
+      "partition_index": 6,
+      "batch_size": 1,
+      "num_layers": 3,
+      "latency": 0.0144522,
+      "cycles": 2890440,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 32,
+      "weights_reloading_layer": "Conv_19",
+      "resource_usage": {
+        "LUT": 41309,
+        "FF": 26382,
+        "BRAM": 106,
+        "DSP": 192,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 17.92925347222222,
+        "FF": 5.725260416666666,
+        "BRAM": 16.98717948717949,
+        "DSP": 11.11111111111111,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 1.8962962962962961,
+        "out (Gbps)": 0.059259259259259255,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_18": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 256,
+          "cycle": 256,
+          "resource_usage": {
+            "LUT": 512,
+            "FF": 1120,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.2222222222222222,
+            "FF": 0.24305555555555555,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_18_squeeze_Conv_19": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 2048,
+          "cycle": 2048,
+          "resource_usage": {
+            "LUT": 12014,
+            "FF": 1884,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 5.214409722222222,
+            "FF": 0.40885416666666663,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_19": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 6144,
+          "cycle": 6144,
+          "resource_usage": {
+            "LUT": 28783,
+            "FF": 23378,
+            "BRAM": 106,
+            "DSP": 192,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 12.492621527777779,
+            "FF": 5.073350694444445,
+            "BRAM": 16.98717948717949,
+            "DSP": 11.11111111111111,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "7": {
+      "partition_index": 7,
+      "batch_size": 1,
+      "num_layers": 2,
+      "latency": 0.01133088,
+      "cycles": 2266176,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 8,
+      "weights_reloading_layer": "Conv_21",
+      "resource_usage": {
+        "LUT": 88680,
+        "FF": 60705,
+        "BRAM": 372,
+        "DSP": 256,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 38.489583333333336,
+        "FF": 13.173828125,
+        "BRAM": 59.61538461538461,
+        "DSP": 14.814814814814813,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 1.4222222222222223,
+        "out (Gbps)": 0.17777777777777778,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_20": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 512,
+          "cycle": 512,
+          "resource_usage": {
+            "LUT": 256,
+            "FF": 560,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.1111111111111111,
+            "FF": 0.12152777777777778,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_21": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 18432,
+          "cycle": 18432,
+          "resource_usage": {
+            "LUT": 88424,
+            "FF": 60145,
+            "BRAM": 372,
+            "DSP": 256,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 38.37847222222222,
+            "FF": 13.052300347222223,
+            "BRAM": 59.61538461538461,
+            "DSP": 14.814814814814813,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "8": {
+      "partition_index": 8,
+      "batch_size": 1,
+      "num_layers": 6,
+      "latency": 0.01769616,
+      "cycles": 3539232,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 32,
+      "weights_reloading_layer": "Conv_24",
+      "resource_usage": {
+        "LUT": 164843,
+        "FF": 42113,
+        "BRAM": 82,
+        "DSP": 24,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 71.54644097222223,
+        "FF": 9.139105902777779,
+        "BRAM": 13.141025641025642,
+        "DSP": 1.3888888888888888,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 2.133333333333333,
+        "out (Gbps)": 0.016666666666666663,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_22_squeeze": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 256,
+          "cycle": 256,
+          "resource_usage": {
+            "LUT": 55148,
+            "FF": 19422,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 23.93576388888889,
+            "FF": 4.21484375,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_22": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 32,
+          "cycle": 32,
+          "resource_usage": {
+            "LUT": 4096,
+            "FF": 8960,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 1.7777777777777777,
+            "FF": 1.9444444444444444,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_22_squeeze_MaxPool_23": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 2048,
+          "cycle": 2048,
+          "resource_usage": {
+            "LUT": 94642,
+            "FF": 5508,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 41.07725694444444,
+            "FF": 1.1953125,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "MaxPool_23": {
+          "type": "LAYER_TYPE.Pooling",
+          "interval": 2048,
+          "cycle": 2048,
+          "resource_usage": {
+            "LUT": 1289,
+            "FF": 1528,
+            "BRAM": 6,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.5594618055555556,
+            "FF": 0.3315972222222222,
+            "BRAM": 0.9615384615384616,
+            "DSP": 0.0
+          }
+        },
+        "MaxPool_23_squeeze_Conv_24": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 1024,
+          "cycle": 1024,
+          "resource_usage": {
+            "LUT": 1580,
+            "FF": 1271,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.6857638888888888,
+            "FF": 0.2758246527777778,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_24": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 12288,
+          "cycle": 12288,
+          "resource_usage": {
+            "LUT": 8088,
+            "FF": 5424,
+            "BRAM": 76,
+            "DSP": 24,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 3.5104166666666665,
+            "FF": 1.1770833333333333,
+            "BRAM": 12.179487179487179,
+            "DSP": 1.3888888888888888,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "9": {
+      "partition_index": 9,
+      "batch_size": 1,
+      "num_layers": 2,
+      "latency": 0.0565184,
+      "cycles": 11303680,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 64,
+      "weights_reloading_layer": "Conv_26",
+      "resource_usage": {
+        "LUT": 4812,
+        "FF": 2892,
+        "BRAM": 43,
+        "DSP": 4,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 2.0885416666666665,
+        "FF": 0.6276041666666666,
+        "BRAM": 6.891025641025641,
+        "DSP": 0.23148148148148145,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 0.08888888888888889,
+        "out (Gbps)": 0.001388888888888889,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_25": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 2048,
+          "cycle": 2048,
+          "resource_usage": {
+            "LUT": 16,
+            "FF": 35,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.006944444444444444,
+            "FF": 0.007595486111111111,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_26": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 36864,
+          "cycle": 36864,
+          "resource_usage": {
+            "LUT": 4796,
+            "FF": 2857,
+            "BRAM": 43,
+            "DSP": 4,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 2.0815972222222223,
+            "FF": 0.6200086805555556,
+            "BRAM": 6.891025641025641,
+            "DSP": 0.23148148148148145,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "10": {
+      "partition_index": 10,
+      "batch_size": 1,
+      "num_layers": 3,
+      "latency": 0.03567232,
+      "cycles": 7134464,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 128,
+      "weights_reloading_layer": "Conv_28",
+      "resource_usage": {
+        "LUT": 13165,
+        "FF": 8435,
+        "BRAM": 40,
+        "DSP": 16,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 5.713975694444445,
+        "FF": 1.8305121527777777,
+        "BRAM": 6.41025641025641,
+        "DSP": 0.9259259259259258,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 0.35555555555555557,
+        "out (Gbps)": 0.002777777777777778,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_27": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 1024,
+          "cycle": 1024,
+          "resource_usage": {
+            "LUT": 32,
+            "FF": 70,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.013888888888888888,
+            "FF": 0.015190972222222222,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_27_squeeze_Conv_28": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 1024,
+          "cycle": 1024,
+          "resource_usage": {
+            "LUT": 1214,
+            "FF": 1371,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.5269097222222222,
+            "FF": 0.2975260416666667,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Conv_28": {
+          "type": "LAYER_TYPE.Convolution",
+          "interval": 4608,
+          "cycle": 4608,
+          "resource_usage": {
+            "LUT": 11919,
+            "FF": 6994,
+            "BRAM": 40,
+            "DSP": 16,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 5.173177083333334,
+            "FF": 1.5177951388888888,
+            "BRAM": 6.41025641025641,
+            "DSP": 0.9259259259259258,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "11": {
+      "partition_index": 11,
+      "batch_size": 1,
+      "num_layers": 4,
+      "latency": 0.0446728,
+      "cycles": 8934560,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 16,
+      "weights_reloading_layer": "Gemm_32",
+      "resource_usage": {
+        "LUT": 6952,
+        "FF": 7451,
+        "BRAM": 17,
+        "DSP": 2,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 3.0173611111111107,
+        "FF": 1.616970486111111,
+        "BRAM": 2.7243589743589745,
+        "DSP": 0.11574074074074073,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 0.4,
+        "out (Gbps)": 0.00625,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_29": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 128,
+          "cycle": 128,
+          "resource_usage": {
+            "LUT": 256,
+            "FF": 560,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.1111111111111111,
+            "FF": 0.12152777777777778,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_29_squeeze_GlobalMaxPool_30": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 2048,
+          "cycle": 2048,
+          "resource_usage": {
+            "LUT": 5954,
+            "FF": 1417,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 2.584201388888889,
+            "FF": 0.3075086805555556,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "GlobalMaxPool_30": {
+          "type": "LAYER_TYPE.GlobalPooling",
+          "interval": 512,
+          "cycle": 512,
+          "resource_usage": {
+            "LUT": 458,
+            "FF": 5251,
+            "BRAM": 0,
+            "DSP": 1
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.1987847222222222,
+            "FF": 1.1395399305555556,
+            "BRAM": 0.0,
+            "DSP": 0.057870370370370364
+          }
+        },
+        "Gemm_32": {
+          "type": "LAYER_TYPE.InnerProduct",
+          "interval": 16384,
+          "cycle": 16384,
+          "resource_usage": {
+            "LUT": 284,
+            "FF": 223,
+            "BRAM": 17,
+            "DSP": 1,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.12326388888888888,
+            "FF": 0.048394097222222224,
+            "BRAM": 2.7243589743589745,
+            "DSP": 0.057870370370370364,
+            "URAM": 0.0
+          }
+        }
+      }
+    },
+    "12": {
+      "partition_index": 12,
+      "batch_size": 1,
+      "num_layers": 5,
+      "latency": 0.00889088,
+      "cycles": 1778176,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 256,
+      "weights_reloading_layer": "Gemm_34",
+      "resource_usage": {
+        "LUT": 154355,
+        "FF": 34224,
+        "BRAM": 1,
+        "DSP": 2,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 66.99435763888889,
+        "FF": 7.427083333333333,
+        "BRAM": 0.16025641025641024,
+        "DSP": 0.11574074074074073,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 3.2,
+        "out (Gbps)": 0.0125,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Relu_33_squeeze": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 16,
+          "cycle": 16,
+          "resource_usage": {
+            "LUT": 55148,
+            "FF": 19422,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 23.93576388888889,
+            "FF": 4.21484375,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_33": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 2,
+          "cycle": 2,
+          "resource_usage": {
+            "LUT": 4096,
+            "FF": 8960,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 1.7777777777777777,
+            "FF": 1.9444444444444444,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Relu_33_squeeze_Gemm_34": {
+          "type": "LAYER_TYPE.Squeeze",
+          "interval": 256,
+          "cycle": 256,
+          "resource_usage": {
+            "LUT": 94536,
+            "FF": 5339,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 41.03125,
+            "FF": 1.1586371527777777,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        },
+        "Gemm_34": {
+          "type": "LAYER_TYPE.InnerProduct",
+          "interval": 512,
+          "cycle": 512,
+          "resource_usage": {
+            "LUT": 559,
+            "FF": 468,
+            "BRAM": 1,
+            "DSP": 2,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.24262152777777776,
+            "FF": 0.1015625,
+            "BRAM": 0.16025641025641024,
+            "DSP": 0.11574074074074073,
+            "URAM": 0.0
+          }
+        },
+        "Relu_35": {
+          "type": "LAYER_TYPE.ReLU",
+          "interval": 2,
+          "cycle": 2,
+          "resource_usage": {
+            "LUT": 16,
+            "FF": 35,
+            "BRAM": 0,
+            "DSP": 0
+          },
+          "resource_usage_percentage": {
+            "LUT": 0.006944444444444444,
+            "FF": 0.007595486111111111,
+            "BRAM": 0.0,
+            "DSP": 0.0
+          }
+        }
+      }
+    },
+    "13": {
+      "partition_index": 13,
+      "batch_size": 1,
+      "num_layers": 1,
+      "latency": 1.945e-06,
+      "cycles": 389,
+      "slowdown": 1.0,
+      "weights_reloading_factor": 1,
+      "weights_reloading_layer": "Gemm_36",
+      "resource_usage": {
+        "LUT": 10385,
+        "FF": 8199,
+        "BRAM": 18,
+        "DSP": 40,
+        "URAM": 0
+      },
+      "resource_usage_percentage": {
+        "LUT": 4.507378472222222,
+        "FF": 1.779296875,
+        "BRAM": 2.8846153846153846,
+        "DSP": 2.314814814814815,
+        "URAM": 0.0
+      },
+      "bandwidth": {
+        "in (Gbps)": 12.8,
+        "out (Gbps)": 0.25,
+        "weight (Gbps)": 0.0
+      },
+      "layers": {
+        "Gemm_36": {
+          "type": "LAYER_TYPE.InnerProduct",
+          "interval": 512,
+          "cycle": 512,
+          "resource_usage": {
+            "LUT": 10385,
+            "FF": 8199,
+            "BRAM": 18,
+            "DSP": 40,
+            "URAM": 0,
+            "BW(weight)": 0.0
+          },
+          "resource_usage_percentage": {
+            "LUT": 4.507378472222222,
+            "FF": 1.779296875,
+            "BRAM": 2.8846153846153846,
+            "DSP": 2.314814814814815,
+            "URAM": 0.0
+          }
+        }
+      }
+    }
+  }
+}
