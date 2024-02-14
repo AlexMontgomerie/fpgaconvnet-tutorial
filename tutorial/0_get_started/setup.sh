@@ -14,17 +14,22 @@ cd ..
 
 git clone https://github.com/AlexMontgomerie/fpgaconvnet-optimiser ${TUTORIAL_ROOT_PATH}/fpgaconvnet-optimiser
 cd ${TUTORIAL_ROOT_PATH}/fpgaconvnet-optimiser
-git checkout dev-petros
+git checkout dev
 python -m pip install -e .
 cd ..
 
 git clone https://github.com/AlexMontgomerie/fpgaconvnet-model ${TUTORIAL_ROOT_PATH}/fpgaconvnet-model
 cd ${TUTORIAL_ROOT_PATH}/fpgaconvnet-model
-git checkout dev-petros
+git checkout dev
 python -m pip install -e .
 cd ..
 
 git clone https://github.com/AlexMontgomerie/fpgaconvnet-hls ${TUTORIAL_ROOT_PATH}/fpgaconvnet-hls
+cd ${TUTORIAL_ROOT_PATH}/fpgaconvnet-hls
+git checkout dev
+git submodule update --init --recursive
+python -m pip install -e .
+cd ..
 
 # install jupyter notebook and netron
 pip install ipykernel jupyter netron

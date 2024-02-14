@@ -15,6 +15,8 @@ As a prerequisite, install the following software on your machine:
 
 5. **vivado Y2K22 patch:** [https://support.xilinx.com/s/article/76960?language=en_US](https://support.xilinx.com/s/article/76960?language=en_US)
 
+Note for using Vivado tools, make sure you add the tools path to your current shell as instructed [here](https://support.xilinx.com/s/question/0D52E00006hpO2CSAU/how-to-start-with-vivado-in-linux?language=en_US)
+
 Afterwards, create a new conda environment named as `fpgaconvnet-tutorial` and run the provided srcipt `setup.sh` to finish the setup 
 
 ```
