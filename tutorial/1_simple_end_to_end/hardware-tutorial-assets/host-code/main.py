@@ -16,6 +16,8 @@ def main():
     elif len(sys.argv) > 2:
         mnist_idx = int(sys.argv[2])
 
+    print(f"The index is: {mnist_idx}")
+
     # Grab image from dataset
     mnist_image = tutorial_library.get_MNIST_image(mnist_idx)
 
@@ -32,6 +34,8 @@ def main():
     # Confirm featuremap reception / additional status messages
     print(tutorial_library.receive_string(fpga_serial))
     print(tutorial_library.receive_string(fpga_serial))
+    # Additional debug status message to print out the output values (without divided by 256)
+    # print(tutorial_library.receive_string(fpga_serial))
     flat_fpgaoutput = tutorial_library.receive_array(fpga_serial)
     print(tutorial_library.receive_string(fpga_serial))
 
@@ -49,8 +53,10 @@ def main():
     print(f"Flat Reference readout ({output.size} items):")
     print(flat_output)
 
+    # reshape to enable comparison 
+    fpgaoutput_reshaped = np.transpose(fpgaoutput, (2, 0, 1))
     #Error information
-    err = (np.square(fpgaoutput - output)).mean(axis=None)
+    err = (np.square(fpgaoutput_reshaped - output)).mean(axis=None)
     print(f"The mean squared error was: {err}")
     return
 
