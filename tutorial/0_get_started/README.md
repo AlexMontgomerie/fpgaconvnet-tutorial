@@ -11,13 +11,13 @@ As a prerequisite, install the following software on your machine:
 23. **protocol buffer compiler:** [https://grpc.io/docs/protoc-installation/](https://grpc.io/docs/protoc-installation/)
 
 
-4. **vivado 2019.1/2:** [https://www.xilinx.com/support/download.html](https://www.xilinx.com/support/download.html)
+4. **Vivado 2019.1:** [https://www.xilinx.com/support/download.html](https://www.xilinx.com/support/download.html)
 
-5. **vivado Y2K22 patch:** [https://support.xilinx.com/s/article/76960?language=en_US](https://support.xilinx.com/s/article/76960?language=en_US)
+5. **Vivado Y2K22 patch:** [https://support.xilinx.com/s/article/76960?language=en_US](https://support.xilinx.com/s/article/76960?language=en_US)
 
-Note for using Vivado tools, make sure you add the tools path to your current shell as instructed [here](https://support.xilinx.com/s/question/0D52E00006hpO2CSAU/how-to-start-with-vivado-in-linux?language=en_US)
+Note for using Vivado, you may set environment variable as instructed [here](https://support.xilinx.com/s/question/0D52E00006hpO2CSAU/how-to-start-with-vivado-in-linux?language=en_US). 
 
-Afterwards, create a new conda environment named as `fpgaconvnet-tutorial` and run the provided srcipt `setup.sh` to finish the setup 
+Afterwards, create a new conda environment named as `fpgaconvnet-tutorial` and run the provided script `setup.sh` to finish the setup 
 
 ```
 conda create -n fpgaconvnet-tutorial python=3.10
@@ -32,7 +32,7 @@ python -c "import torch"
 python -c "import fpgaconvnet"
 ```
 
-The rest of the tutorial is built on jupyter notebook, and simply run `notebook_shell.sh`to continue.
+The rest of the tutorial is built on Jupyter notebook, and simply run `notebook_shell.sh`to continue.
 
 ```
 ./notebook_shell.sh
