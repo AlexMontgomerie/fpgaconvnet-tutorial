@@ -6,7 +6,7 @@ import serial
 # Grabs image at index idx from the MNIST testing dataset
 def get_MNIST_image(idx):
     # Read the mnist binary format
-    image_path = "MNIST/t10k-images.idx3-ubyte"
+    image_path = "MNIST/t10k-images-idx3-ubyte"
     with open(image_path, 'rb') as fh:
         fh.seek(16 + idx * (28 * 28), 0)
         arr = list(fh.read(28 * 28))
@@ -22,13 +22,13 @@ def get_MNIST_image(idx):
 
     # Batches for onnx run
     arr = np.reshape(arr, (1, 1, 28, 28))
-    arr = np.tile(arr, (42, 1, 1, 1))
+    # arr = np.tile(arr, (42, 1, 1, 1))
     return arr
 
 
 # Grabs corresponding label at index idx from the MNIST testing dataset
 def get_MNIST_label(idx):
-    label_path = "MNIST/t10k-labels.idx1-ubyte"
+    label_path = "MNIST/t10k-labels-idx1-ubyte"
     with open(label_path, 'rb') as fh:
         fh.seek(8 + idx, 0)
         return int(fh.read(1)[0])
@@ -36,7 +36,7 @@ def get_MNIST_label(idx):
 # Runs inference using the onnxruntime
 def run_inference(model_path, input):
     ort_sess = onnxruntime.InferenceSession(model_path)
-    return ort_sess.run(["conv1"], {"conv1_input": input})
+    return ort_sess.run(["4"], {"input.1": input})
 
 # Sends 8 bit grayscale image to FPGA
 def send_array(serial_descriptor, arr):

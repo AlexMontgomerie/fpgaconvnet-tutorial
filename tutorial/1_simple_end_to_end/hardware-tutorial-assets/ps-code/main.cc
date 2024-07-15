@@ -23,13 +23,10 @@ int main(){
 	//Allocate memory areas
 	volatile u64* input = new u64[INPUT_SHAPE/COARSE_IN];
 	volatile u64* output = new u64[OUTPUT_SHAPE/COARSE_OUT];
-
 	XFpgaconvnet_ip hw;
 
-    // Set IO addresses
+	//Initialize IP
 	XFpgaconvnet_ip_Initialize(&hw, XPAR_FPGACONVNET_IP_0_DEVICE_ID);
-    XFpgaconvnet_ip_Set_fpgaconvnet_in_0( &hw, (u32) input);
-    XFpgaconvnet_ip_Set_fpgaconvnet_out_0(&hw, (u32) output);
 
     std::string in;
 
@@ -43,6 +40,8 @@ int main(){
 
 		usleep(100000);
 
+		//Flush cache
+	    Xil_DCacheFlush();
 		std::cout<<  "Featuremap upload complete \n";
 
 		// IP control setup
@@ -51,21 +50,29 @@ int main(){
 		XTime t_start, t_end;
 		XTime_GetTime(&t_start);
 
+		//Set input and output addresses
+		XFpgaconvnet_ip_Set_fpgaconvnet_in_0( &hw, (u32) input);
+		XFpgaconvnet_ip_Set_fpgaconvnet_out_0(&hw, (u32) output);
+
 		//1024 runs for better time estimation
 		for(int i = 0; i<RUNS; i++){
 
 			XFpgaconvnet_ip_Start(&hw);
 
-			//Wait for run to complete
-			while(!XFpgaconvnet_ip_IsDone(&hw));
+			//Wait for IP to finish
+			while(!XFpgaconvnet_ip_IsReady(&hw));
 		}
 
 		XTime_GetTime(&t_end);
 		std::cout << "Beginning download \n";
 		usleep(100000);
 
+		//Invalidate cache
+		Xil_DCacheInvalidate();
+
 		//Dump output
 		for(int i = 0; i<OUTPUT_SHAPE; i++){
+			// load address, the processor is byte addressable, hence each address is 8 bits
 			std::cout << Xil_In16(((u64) output) + 2*i) << " ";
 			usleep(50);
 		}
@@ -74,10 +81,8 @@ int main(){
 		usleep(100000);
 		float t_run = (t_end - t_start)* 1000000. /COUNTS_PER_SECOND;
 		std::cout<< "Completed " << RUNS << " Runs.  Time taken (us): " << (int) t_run << "  Rate (img/s): " << 1/t_run * RUNS * 1000000 << "\n";
-
+	    Xil_DCacheFlush();
     }
 
     return 0;
 }
-
-
