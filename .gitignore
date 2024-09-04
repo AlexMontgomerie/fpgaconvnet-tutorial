@@ -1,5 +1,5 @@
 .ipynb_checkpoints/
 .ztr-directory
 lenet.onnx*
-*.png
+# *.png
 outputs/
